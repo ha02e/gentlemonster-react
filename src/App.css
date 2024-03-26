@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.wrapper {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1em auto;
+}
+
+.navigation-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #efefef;
+}
+
+.logo-section {
+  width: 20%;
+  height: 100%;
+  padding: 1em;
+}
+.logo-section img {
+  width: 60%;
+  min-width: 220px;
+}
+
+.search-section {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search-section input {
+  margin: 0 0.5em;
+}
+
+.login-section {
+  width: 10%;
+  padding: 1em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.login-section div {
+  margin: 0 0.5em;
+}
+
+.nav-bottom {
+  display: flex;
+  justify-content: space-around;
+  padding: 2em 0;
+}
+
+.menu-list {
+  display: flex;
+  list-style-type: none;
+  font-size: 1.1em;
+}
+
+.menu-list li {
+  padding: 0 1.5em;
+  cursor: pointer;
+}
