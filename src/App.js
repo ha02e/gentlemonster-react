@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Products from "./page/Products";
@@ -16,13 +17,19 @@ import Navbar from "./component/Navbar";
 
 function App() {
   return (
-    <div className="wrapper">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Products />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/products/:id" element={<ProductDetail />} />
-      </Routes>
+    <div>
+      <div className="wrapper">
+        <Navbar />
+
+        {/* <div>
+          <img src="https://web-resource.gentlemonster.com/assets/img/shop/list/special_area/2024-maison-margiela/collaborations/cut-image-pc-v2.jpg" />
+        </div> */}
+        <Routes>
+          <Route path="/" element={<Products />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
+        </Routes>
+      </div>
     </div>
   );
 }
