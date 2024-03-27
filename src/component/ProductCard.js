@@ -1,8 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
+  const navigate = useNavigate();
+  const showDetail = () => {
+    navigate(`/products/${item.id}`);
+  };
+
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={showDetail}>
       {item?.best === true && <div className="product-best">BestSeller</div>}
       <div className="product-image">
         <img src={item?.img} alt="product img" />

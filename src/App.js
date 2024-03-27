@@ -4,8 +4,8 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Products from "./page/Products";
 import Login from "./page/Login";
-import ProductDetail from "./page/ProductDetail";
 import Navbar from "./component/Navbar";
+import PrivateRoute from "./route/PrivateRoute";
 
 //1. 전체 상품 페이지, 로그인 페이지, 상품 상세 페이지
 //1-1. navigation bar 만들기
@@ -37,7 +37,10 @@ function App() {
             path="/login"
             element={<Login setAuthenticate={setAuthenticate} />}
           />
-          <Route path="/products/:id" element={<ProductDetail />} />
+          <Route
+            path="/products/:id"
+            element={<PrivateRoute authenticate={authenticate} />}
+          />
         </Routes>
       </div>
     </div>
