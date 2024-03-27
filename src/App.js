@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
@@ -16,6 +17,12 @@ import Navbar from "./component/Navbar";
 //7. 로그인 상태면 로그아웃 버튼이 보이고, 로그인이 안되어있으면 로그인 버튼이 보인다.
 
 function App() {
+  const [authenticate, setAuthenticate] = useState(false);
+
+  useEffect(() => {
+    console.log("aaa", authenticate);
+  }, [authenticate]);
+
   return (
     <div>
       <div className="wrapper">
@@ -26,7 +33,10 @@ function App() {
         </div> */}
         <Routes>
           <Route path="/" element={<Products />} />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/login"
+            element={<Login setAuthenticate={setAuthenticate} />}
+          />
           <Route path="/products/:id" element={<ProductDetail />} />
         </Routes>
       </div>

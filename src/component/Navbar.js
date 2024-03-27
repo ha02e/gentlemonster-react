@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -14,6 +15,11 @@ const Navbar = () => {
     "매장보기",
     "수리서비스",
   ];
+
+  const navigate = useNavigate();
+  const goToLogin = () => {
+    navigate("/login");
+  };
 
   return (
     <div className="navigation-bar">
@@ -33,7 +39,7 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faSearch} size="lg" />
             </button>
           </div>
-          <div className="login-section">
+          <div className="login-section" onClick={goToLogin}>
             <FontAwesomeIcon icon={faUser} size="lg" />
             <div>로그인</div>
           </div>
