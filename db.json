@@ -6,7 +6,7 @@
       "title": "메종 마르지엘라 - MM107 Leather LIV1",
       "category": "sunglasses",
       "price": 448000,
-      "choice": true,
+      "best": true,
       "new": true,
       "color": ["Ivory", "Black", "Khaki"]
     },
@@ -16,7 +16,7 @@
       "title": "메종 마르지엘라 - MM102 M04(BL)",
       "category": "sunglasses",
       "price": 550000,
-      "choice": true,
+      "best": true,
       "new": true,
       "color": ["Black", "Blue"]
     },
@@ -26,7 +26,7 @@
       "title": "메종 마르지엘라 - MM113 L2",
       "category": "glasses",
       "price": 368000,
-      "choice": false,
+      "best": false,
       "new": true,
       "color": ["Tortoise Shell", "Black"]
     },
@@ -36,7 +36,7 @@
       "title": "멧 02(V)",
       "category": "glasses",
       "price": 350000,
-      "choice": false,
+      "best": false,
       "new": true,
       "color": ["Silver-Violet", "Silver-Clean", "L"]
     },
@@ -46,7 +46,7 @@
       "title": "오아 T5",
       "category": "glasses",
       "price": 299000,
-      "choice": true,
+      "best": true,
       "new": false,
       "color": ["Tortoise Shell", "Black", "Brown"]
     },
@@ -56,7 +56,7 @@
       "title": "어웨이브 GRC3",
       "category": "glasses",
       "price": 380000,
-      "choice": false,
+      "best": false,
       "new": false,
       "color": ["Green", "Black", "L"]
     },
@@ -66,7 +66,7 @@
       "title": "엘리펀트 02(Y)",
       "category": "glasses",
       "price": 310000,
-      "choice": true,
+      "best": true,
       "new": false,
       "color": ["Silver-Metal", "Silver-Metal-Yellow", "Black-Metal"]
     },
@@ -76,7 +76,7 @@
       "title": "요나 031",
       "category": "glasses",
       "price": 269000,
-      "choice": false,
+      "best": false,
       "new": true,
       "color": ["Gold-Metal", "Silver-Metal"]
     },
@@ -86,7 +86,7 @@
       "title": "밀란 A C2",
       "category": "glasses",
       "price": 249000,
-      "choice": true,
+      "best": true,
       "new": true,
       "color": ["Black", "Brown", "Yellow", "Khaki"]
     },
@@ -96,7 +96,7 @@
       "title": "KUN - 0001 01",
       "category": "collaboration",
       "price": 460000,
-      "choice": false,
+      "best": false,
       "new": true,
       "size": ["Black", "Clear"]
     },
@@ -106,7 +106,7 @@
       "title": "제니 - 데이지 02",
       "category": "collaboration",
       "price": 260000,
-      "choice": true,
+      "best": true,
       "new": false,
       "size": ["Pink", "Yellow"]
     },
@@ -116,7 +116,7 @@
       "title": "D’heygere - Tiara 02",
       "category": "collaboration",
       "price": 500000,
-      "choice": true,
+      "best": true,
       "new": true,
       "size": ["Silver"]
     },
@@ -126,7 +126,7 @@
       "title": "디어 PC9",
       "category": "sunglasses",
       "price": 289000,
-      "choice": true,
+      "best": true,
       "new": true,
       "size": ["Pink", "Navy", "Khaki", "Gray", "Black"]
     },
@@ -136,9 +136,9 @@
       "title": "에고 01",
       "category": "glasses",
       "price": 330000,
-      "choice": false,
+      "best": false,
       "new": false,
-      "size": ["Black", "M", "L"]
+      "size": ["Black"]
     }
   ]
 }

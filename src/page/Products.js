@@ -18,7 +18,7 @@ const Products = () => {
   }, []);
 
   return (
-    <div>
+    <div className="product-section">
       <Container fluid>
         <Row>
           {productList.map((item) => (

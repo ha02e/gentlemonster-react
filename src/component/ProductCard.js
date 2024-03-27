@@ -3,7 +3,7 @@ import React from "react";
 const ProductCard = ({ item }) => {
   return (
     <div className="product-card">
-      {item?.choice === true && <div className="product-best">BestSeller</div>}
+      {item?.best === true && <div className="product-best">BestSeller</div>}
       <div className="product-image">
         <img src={item?.img} alt="product img" />
       </div>
