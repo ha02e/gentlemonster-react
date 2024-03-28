@@ -3,11 +3,12 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 const ProductDetail = () => {
-  const [product, setProduct] = useState(null);
   let { id } = useParams();
+  const [product, setProduct] = useState(null);
 
   const getProductDetail = async () => {
-    let url = `https://my-json-server.typicode.com/ha02e/gentlemonster-react/products/${id}`;
+    let url = `http://localhost:5000/products/${id}`;
+    // let url = `https://my-json-server.typicode.com/ha02e/gentlemonster-react/products/${id}`;
     let response = await fetch(url);
     let data = await response.json();
     console.log("ddddd", data);
