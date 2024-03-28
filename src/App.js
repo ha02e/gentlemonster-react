@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Products from "./page/Products";
 import Login from "./page/Login";
 import Navbar from "./component/Navbar";
@@ -20,6 +20,9 @@ import MainBanner from "./component/MainBanner";
 function App() {
   const [authenticate, setAuthenticate] = useState(false);
 
+  const location = useLocation();
+  const isProductsPage = location.pathname === "/";
+
   useEffect(() => {
     console.log("aaa", authenticate);
   }, [authenticate]);
@@ -28,7 +31,8 @@ function App() {
     <div>
       <div className="wrapper">
         <Navbar />
-        <MainBanner />
+        {isProductsPage && <MainBanner />}{" "}
+        {/* Products 페이지에서만 MainBanner 표시 */}
         <Routes>
           <Route path="/" element={<Products />} />
           <Route

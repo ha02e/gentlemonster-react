@@ -22,14 +22,14 @@ const MainBanner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://web-resource.gentlemonster.com/assets/img/shop/list/special_area/2024-maison-margiela/glasses/cut-image-pc.jpg"
-            alt="2024-maison-margiela"
+            src="https://web-resource.gentlemonster.com/assets/img/shop/list/special_area/24-optical/glasses/image-pc.jpg"
+            alt="24-optical"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://web-resource.gentlemonster.com/assets/img/shop/list/special_area/24-optical/glasses/image-pc.jpg"
-            alt="24-optical"
+            src="https://web-resource.gentlemonster.com/assets/img/shop/list/special_area/2024-maison-margiela/glasses/cut-image-pc.jpg"
+            alt="2024-maison-margiela"
           />
         </SwiperSlide>
         <SwiperSlide>
