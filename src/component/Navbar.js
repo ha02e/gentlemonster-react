@@ -33,7 +33,7 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
         <div className="logo-section">
           <Link to={"/"}>
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gentle_monster_logo.svg/2560px-Gentle_monster_logo.svg.png"
+              src="https://web-resource.gentlemonster.com/assets/img/mailchimp/gm-serif-logo.png"
               alt="logo"
             />
           </Link>

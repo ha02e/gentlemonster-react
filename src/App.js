@@ -7,6 +7,7 @@ import Login from "./page/Login";
 import Navbar from "./component/Navbar";
 import PrivateRoute from "./route/PrivateRoute";
 import MainBanner from "./component/MainBanner";
+import { Container } from "react-bootstrap";
 
 //1. 전체 상품 페이지, 로그인 페이지, 상품 상세 페이지
 //1-1. navigation bar 만들기
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <div>
-      <div className="wrapper">
+      <Container fluid className="wrapper">
         <Navbar setAuthenticate={setAuthenticate} authenticate={authenticate} />
         {isProductsPage && <MainBanner />}{" "}
         {/* Products 페이지에서만 MainBanner 표시 */}
@@ -44,7 +45,7 @@ function App() {
             element={<PrivateRoute authenticate={authenticate} />}
           />
         </Routes>
-      </div>
+      </Container>
     </div>
   );
 }
