@@ -10,7 +10,7 @@ const ProductCard = ({ item }) => {
   return (
     <div className="product-card" onClick={showDetail}>
       {item?.blight === true && (
-        <div className="product-light">Blue Light Protection</div>
+        <div className="product-blight">Blue Light Protection</div>
       )}
       <div className="product-image">
         <img src={item?.img} alt="product img" />
