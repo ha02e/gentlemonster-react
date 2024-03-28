@@ -30,7 +30,7 @@ function App() {
   return (
     <div>
       <div className="wrapper">
-        <Navbar />
+        <Navbar setAuthenticate={setAuthenticate} authenticate={authenticate} />
         {isProductsPage && <MainBanner />}{" "}
         {/* Products 페이지에서만 MainBanner 표시 */}
         <Routes>

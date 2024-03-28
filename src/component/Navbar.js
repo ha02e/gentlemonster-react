@@ -5,7 +5,7 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ setAuthenticate, authenticate }) => {
   const menuList = [
     "선글라스",
     "안경",
@@ -18,7 +18,13 @@ const Navbar = () => {
 
   const navigate = useNavigate();
   const goToLogin = () => {
-    navigate("/login");
+    if (authenticate === true) {
+      if (window.confirm("로그아웃 하시겠습니까?")) {
+        setAuthenticate(false);
+      }
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
@@ -41,7 +47,7 @@ const Navbar = () => {
           </div>
           <div className="login-section" onClick={goToLogin}>
             <FontAwesomeIcon icon={faUser} size="lg" />
-            <div>로그인</div>
+            <div>{authenticate === true ? "로그아웃" : "로그인"}</div>
           </div>
         </div>
       </div>
