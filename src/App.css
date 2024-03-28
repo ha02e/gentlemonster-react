@@ -7,18 +7,15 @@
 
 .wrapper {
   width: 1920px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 1em auto;
 }
+
+/* Navigation bar */
 
 .navigation-bar {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1em 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -30,7 +27,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid #efefef;
-  padding: 1em;
+  padding: 1em 0;
 }
 
 .logo-section {
@@ -101,23 +98,50 @@
 
 .nav-bottom {
   display: flex;
-  justify-content: space-around;
-  padding: 2em 0 0 0;
+  justify-content: center;
+  height: 60px;
 }
 
 .menu-list {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
   list-style-type: none;
   font-size: 1.1em;
 }
 
 .menu-list li {
-  padding: 0 1.5em;
+  padding: 0 1.8em;
   cursor: pointer;
 }
 
+/* MainBanner */
+
+.banner-section {
+  margin-top: 150px;
+}
+
+.banner-slide {
+  --swiper-theme-color: #e9e9e9;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Product Show */
+
 .product-section {
-  margin-top: 200px;
+  margin-top: 2.2em;
 }
 
 .product-card {
