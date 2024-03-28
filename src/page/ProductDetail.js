@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 const ProductDetail = () => {
@@ -26,10 +26,26 @@ const ProductDetail = () => {
           <img src={product?.img} alt="product" />
         </Col>
         <Col className="product-contents">
-          <div>{product?.title}</div>
-          <div>{product?.description}</div>
-          <div>{product?.price.toLocaleString("ko-KR")}원</div>
+          <div className="product-top">
+            {product?.new === true && <div className="new">New</div>}
+            {product?.blight === true && (
+              <div className="blight">Blue Light Protection</div>
+            )}
+          </div>
+          <div className="product-name">{product?.title}</div>
+          <div className="product-text">{product?.description}</div>
+          <div className="product-price">
+            {product?.price.toLocaleString("ko-KR")}원
+          </div>
+          <Form.Select size="lg" className="product-color border-dark">
+            {product?.color.map((colorItem, idx) => (
+              <option key={idx}>{colorItem}</option>
+            ))}
+          </Form.Select>
           <div className="button-area">
+            <Button variant="outline-dark" size="lg">
+              관심상품 추가하기
+            </Button>
             <Button variant="outline-dark" size="lg">
               쇼핑백에 추가하기
             </Button>
