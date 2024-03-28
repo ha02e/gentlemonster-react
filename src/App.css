@@ -240,6 +240,7 @@
 .product-detail .button-area {
   display: flex;
   flex-direction: column;
+  margin-top: 1.2em;
 }
 .product-detail .button-area button {
   margin: 0.4em 0;

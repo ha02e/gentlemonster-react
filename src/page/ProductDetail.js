@@ -7,8 +7,8 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
 
   const getProductDetail = async () => {
-    let url = `http://localhost:5000/products/${id}`;
-    // let url = `https://my-json-server.typicode.com/ha02e/gentlemonster-react/products/${id}`;
+    // let url = `http://localhost:5000/products/${id}`;
+    let url = `https://my-json-server.typicode.com/ha02e/gentlemonster-react/products/${id}`;
     let response = await fetch(url);
     let data = await response.json();
     console.log("ddddd", data);
@@ -27,8 +27,8 @@ const ProductDetail = () => {
         </Col>
         <Col className="product-contents">
           <div>{product?.title}</div>
-          <div>{(product?.price).toLocaleString("ko-KR")}</div>
           <div>{product?.description}</div>
+          <div>{product?.price.toLocaleString("ko-KR")}원</div>
           <div className="button-area">
             <Button variant="outline-dark" size="lg">
               쇼핑백에 추가하기
