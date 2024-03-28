@@ -3,8 +3,8 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 const ProductDetail = () => {
-  let { id } = useParams();
   const [product, setProduct] = useState(null);
+  let { id } = useParams();
 
   const getProductDetail = async () => {
     let url = `https://my-json-server.typicode.com/ha02e/gentlemonster-react/products/${id}`;
@@ -26,7 +26,7 @@ const ProductDetail = () => {
         </Col>
         <Col className="product-contents">
           <div>{product?.title}</div>
-          <div>{product?.price}</div>
+          <div>{(product?.price).toLocaleString("ko-KR")}</div>
           <div>{product?.description}</div>
           <div className="button-area">
             <Button variant="outline-dark" size="lg">

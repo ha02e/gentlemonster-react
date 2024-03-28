@@ -8,6 +8,7 @@ const Products = () => {
   const getProducts = async () => {
     // let url = `http://localhost:5000/products`;
     let url = `https://my-json-server.typicode.com/ha02e/gentlemonster-react/products`;
+    // let url = `https://my-json-server.typicode.com/ha02e/gentlemonster-react/products`;
     let response = await fetch(url);
     let data = await response.json();
     // console.log("ddd", data);
