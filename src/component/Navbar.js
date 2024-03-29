@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
@@ -16,6 +16,8 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
     "수리서비스",
   ];
 
+  const [searchKeyword, setSearchKeyword] = useState("");
+
   const navigate = useNavigate();
   const goToLogin = () => {
     if (authenticate === true) {
@@ -25,6 +27,22 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
     } else {
       navigate("/login");
     }
+  };
+
+  const searchEnter = (event) => {
+    if (event.key === "Enter") {
+      let keyword = event.target.value;
+      console.log("keyword : ", keyword);
+
+      navigate(`/?q=${keyword}`);
+      setSearchKeyword("");
+    }
+  };
+
+  const searchClick = () => {
+    let keyword = document.getElementById("searchInput").value;
+    navigate(`/?q=${keyword}`);
+    setSearchKeyword("");
   };
 
   return (
@@ -40,8 +58,15 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
         </div>
         <div className="icon-section">
           <div className="search-section">
-            <input type="text" placeholder="검색어를 입력하세요" />
-            <button className="search-icon">
+            <input
+              type="text"
+              placeholder="검색어를 입력하세요"
+              id="searchInput"
+              value={searchKeyword}
+              onChange={(event) => setSearchKeyword(event.target.value)}
+              onKeyPress={(event) => searchEnter(event)}
+            />
+            <button className="search-icon" onClick={searchClick}>
               <FontAwesomeIcon icon={faSearch} size="lg" />
             </button>
           </div>
