@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSearch, faX } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ setAuthenticate, authenticate }) => {
@@ -17,6 +17,7 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
   ];
 
   const [searchKeyword, setSearchKeyword] = useState("");
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
 
   const navigate = useNavigate();
   const goToLogin = () => {
@@ -45,6 +46,13 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
     setSearchKeyword("");
   };
 
+  const openMenu = () => {
+    setIsSideMenuOpen(true);
+  };
+  const closeMenu = () => {
+    setIsSideMenuOpen(false);
+  };
+
   return (
     <div className="navigation-bar">
       <div className="nav-top">
@@ -57,6 +65,21 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
           </Link>
         </div>
         <div className="icon-section">
+          <button className="mobile-menu-icon" onClick={openMenu}>
+            <FontAwesomeIcon icon={faBars} size="lg" />
+          </button>
+          <div
+            className={`mobile-menu-section ${isSideMenuOpen ? "open" : ""}`}
+          >
+            <button className="close-btn" onClick={closeMenu}>
+              <FontAwesomeIcon icon={faX} size="lg" />
+            </button>
+            <ul className="mobile-menu-list">
+              {menuList.map((menu) => (
+                <li>{menu}</li>
+              ))}
+            </ul>
+          </div>
           <div className="search-section">
             <input
               type="text"
@@ -76,10 +99,6 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
               {authenticate === true ? "로그아웃" : "로그인"}
             </div>
           </div>
-          <button className="mobile-menu-icon" onClick={searchClick}>
-            <FontAwesomeIcon icon={faBars} size="lg" />
-          </button>
-          <div className="mobile-menu-section"></div>
         </div>
       </div>
       <div className="nav-bottom">

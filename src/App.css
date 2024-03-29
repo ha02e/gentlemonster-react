@@ -9,6 +9,7 @@
 
 .navigation-bar {
   width: 100%;
+  height: 160px;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -33,6 +34,50 @@
   margin-left: 0.4em;
 }
 
+.mobile-menu-section {
+  height: 100%;
+  width: 0;
+  /* width: 70vw; */
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  background-color: #000000e5;
+  overflow-x: hidden;
+  transition: 0.4s;
+  padding-top: 60px;
+}
+
+.mobile-menu-section.open {
+  width: 70vw;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  border: none;
+  background: none;
+  color: #ffffff;
+}
+
+.mobile-menu-list {
+  list-style-type: none;
+  font-size: 1.1em;
+  padding: 0;
+}
+
+.mobile-menu-list li {
+  padding: 1em 1.5em;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.mobile-menu-list li:hover {
+  background-color: #efefefad;
+  color: #333333;
+}
+
 .logo-section {
   width: 400px;
   height: 100%;
@@ -43,7 +88,6 @@
 
 .logo-section img {
   width: 100%;
-  min-width: 240px;
 }
 
 .icon-section {
@@ -125,7 +169,7 @@
 /* MainBanner */
 
 .banner-section {
-  margin-top: 150px;
+  margin-top: 160px;
 }
 
 .banner-slide {
@@ -289,17 +333,36 @@
 
 /* mobile */
 @media screen and (max-width: 992px) {
+  .navigation-bar {
+    height: 180px;
+    background-color: #ffffff;
+  }
+
+  .banner-section {
+    margin-top: 180px;
+  }
+
+  .nav-top {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+  }
+
+  .logo-section {
+    width: 320px;
+    margin: 1em 0;
+  }
+
   .search-section {
-    width: 280px;
+    width: 320px;
   }
 
   .search-section input {
-    padding: 0.4em 1.2em;
     font-size: 0.9em;
   }
 
   .login-text {
-    display: none;
+    font-size: 0.9em;
   }
 
   .nav-bottom {
@@ -308,5 +371,27 @@
 
   .mobile-menu-icon {
     display: block;
+    margin: 0 0.5em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .search-section {
+    width: 260px;
+    margin: 0 0.6em;
+  }
+
+  .mobile-menu-icon {
+    margin: 0;
+  }
+
+  .login-section {
+    padding: 1em 0;
+  }
+
+  .login-text {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
   }
 }
