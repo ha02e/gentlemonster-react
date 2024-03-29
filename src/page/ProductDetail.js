@@ -20,12 +20,12 @@ const ProductDetail = () => {
   }, []);
 
   return (
-    <Container className="product-detail">
+    <Container className="sm product-detail">
       <Row>
-        <Col className="product-image">
+        <Col lg className="product-image">
           <img src={product?.img} alt="product" />
         </Col>
-        <Col className="product-contents">
+        <Col lg className="product-contents">
           <div className="product-top">
             {product?.new === true && <div className="new">New</div>}
             {product?.blight === true && (

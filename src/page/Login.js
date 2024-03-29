@@ -24,7 +24,7 @@ const Login = ({ setAuthenticate }) => {
   };
 
   return (
-    <Container className="login-form" fluid>
+    <Container className="login-form">
       <h3>로그인</h3>
       <Form validated={validated} onSubmit={(event) => loginUser(event)}>
         <FloatingLabel

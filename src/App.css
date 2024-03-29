@@ -25,6 +25,7 @@
 .nav-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-bottom: 2px solid #efefef;
   padding: 1em 0;
 }
@@ -40,7 +41,7 @@
 
 .logo-section img {
   width: 100%;
-  min-width: 260px;
+  min-width: 240px;
 }
 
 .icon-section {
@@ -58,7 +59,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 1em;
+  margin-right: 0.5em;
 }
 
 .search-section input {
@@ -87,7 +88,7 @@
 }
 
 .login-section {
-  padding: 1em;
+  padding: 1em 0.5em;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -108,13 +109,14 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-flow: row wrap;
   height: 100%;
   list-style-type: none;
   font-size: 1.1em;
 }
 
 .menu-list li {
-  padding: 0 1.8em;
+  padding: 1em 1.8em;
   cursor: pointer;
 }
 
@@ -202,18 +204,11 @@
 
 .login-form {
   margin-top: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .login-form h3 {
   margin: 1em;
-}
-
-.login-form form {
-  width: 25%; /* 원하는 넓이로 조정 */
 }
 
 .login-form button {
@@ -288,4 +283,11 @@
 .product-detail .button-area button {
   margin: 0.4em 0;
   font-size: 1em;
+}
+
+/* mobile */
+@media screen and (max-width: 992px) {
+  .search-section {
+    width: 300px;
+  }
 }
