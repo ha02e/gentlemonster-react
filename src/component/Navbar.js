@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ setAuthenticate, authenticate }) => {
@@ -72,8 +72,14 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
           </div>
           <div className="login-section" onClick={goToLogin}>
             <FontAwesomeIcon icon={faUser} size="lg" />
-            <div>{authenticate === true ? "로그아웃" : "로그인"}</div>
+            <div className="login-text">
+              {authenticate === true ? "로그아웃" : "로그인"}
+            </div>
           </div>
+          <button className="mobile-menu-icon" onClick={searchClick}>
+            <FontAwesomeIcon icon={faBars} size="lg" />
+          </button>
+          <div className="mobile-menu-section"></div>
         </div>
       </div>
       <div className="nav-bottom">

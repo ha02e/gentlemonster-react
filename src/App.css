@@ -5,10 +5,6 @@
   font-family: "Noto Sans KR", sans-serif;
 }
 
-.wrapper {
-  /* width: 1920px; */
-}
-
 /* Navigation bar */
 
 .navigation-bar {
@@ -27,14 +23,20 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #efefef;
-  padding: 1em 0;
+  padding: 1em;
+}
+
+.mobile-menu-icon {
+  display: none;
+  border: none;
+  background: none;
+  margin-left: 0.4em;
 }
 
 .logo-section {
-  width: 440px;
+  width: 400px;
   height: 100%;
   padding: 1em;
-  margin: 0 1em;
   display: flex;
   justify-content: center;
 }
@@ -288,6 +290,23 @@
 /* mobile */
 @media screen and (max-width: 992px) {
   .search-section {
-    width: 300px;
+    width: 280px;
+  }
+
+  .search-section input {
+    padding: 0.4em 1.2em;
+    font-size: 0.9em;
+  }
+
+  .login-text {
+    display: none;
+  }
+
+  .nav-bottom {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
   }
 }
