@@ -1,18 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { productAction } from "../redux/actions/productAction";
 
 const ProductDetail = () => {
   let { id } = useParams();
-  const [product, setProduct] = useState(null);
+  // const [product, setProduct] = useState(null);
+  const product = useSelector((state) => state.product.selectedItem);
+  const dispatch = useDispatch();
 
   const getProductDetail = async () => {
-    // let url = `http://localhost:5000/products/${id}`;
-    let url = `https://my-json-server.typicode.com/ha02e/gentlemonster-react/products/${id}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    console.log("ddddd", data);
-    setProduct(data);
+    dispatch(productAction.getProductDetail(id));
+    // // let url = `http://localhost:5000/products/${id}`;
+    // let url = `https://my-json-server.typicode.com/ha02e/gentlemonster-react/products/${id}`;
+    // let response = await fetch(url);
+    // let data = await response.json();
+    // console.log("ddddd", data);
+    // setProduct(data);
   };
 
   useEffect(() => {

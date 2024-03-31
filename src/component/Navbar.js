@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { authenticateAction } from "../redux/actions/authenticateAction";
 
-const Navbar = ({ setAuthenticate, authenticate }) => {
+const Navbar = () => {
   const menuList = [
     "선글라스",
     "안경",
