@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { productAction } from "../redux/actions/productAction";
+// import { productAction } from "../redux/actions/productAction";
+import { fetchProductDetail } from "../redux/reducers/productSlice";
 
 const ProductDetail = () => {
   let { id } = useParams();
@@ -11,7 +12,8 @@ const ProductDetail = () => {
   const dispatch = useDispatch();
 
   const getProductDetail = async () => {
-    dispatch(productAction.getProductDetail(id));
+    // dispatch(productAction.getProductDetail(id));
+    dispatch(fetchProductDetail(id));
     // // let url = `http://localhost:5000/products/${id}`;
     // let url = `https://my-json-server.typicode.com/ha02e/gentlemonster-react/products/${id}`;
     // let response = await fetch(url);
