@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faBars, faSearch, faX } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { authenticateAction } from "../redux/actions/authenticateAction";
 
 const Navbar = ({ setAuthenticate, authenticate }) => {
   const menuList = [
@@ -19,11 +21,14 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
   const [searchKeyword, setSearchKeyword] = useState("");
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isAuthenticated = useSelector((state) => state.auth.authenticate);
+
   const goToLogin = () => {
-    if (authenticate === true) {
+    if (isAuthenticated) {
       if (window.confirm("로그아웃 하시겠습니까?")) {
-        setAuthenticate(false);
+        dispatch(authenticateAction.logout());
       }
     } else {
       navigate("/login");
@@ -96,7 +101,7 @@ const Navbar = ({ setAuthenticate, authenticate }) => {
           <div className="login-section" onClick={goToLogin}>
             <FontAwesomeIcon icon={faUser} size="lg" />
             <div className="login-text">
-              {authenticate === true ? "로그아웃" : "로그인"}
+              {isAuthenticated ? "로그아웃" : "로그인"}
             </div>
           </div>
         </div>

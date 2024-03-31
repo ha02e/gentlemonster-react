@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -19,31 +18,19 @@ import { Container } from "react-bootstrap";
 //7. 로그인 상태면 로그아웃 버튼이 보이고, 로그인이 안되어있으면 로그인 버튼이 보인다.
 
 function App() {
-  const [authenticate, setAuthenticate] = useState(false);
-
   const location = useLocation();
   const isProductsPage = location.pathname === "/";
-
-  useEffect(() => {
-    console.log("aaa", authenticate);
-  }, [authenticate]);
 
   return (
     <div>
       <Container fluid className="wrapper">
-        <Navbar setAuthenticate={setAuthenticate} authenticate={authenticate} />
+        <Navbar />
         {isProductsPage && <MainBanner />}{" "}
         {/* Products 페이지에서만 MainBanner 표시 */}
         <Routes>
           <Route path="/" element={<Products />} />
-          <Route
-            path="/login"
-            element={<Login setAuthenticate={setAuthenticate} />}
-          />
-          <Route
-            path="/products/:id"
-            element={<PrivateRoute authenticate={authenticate} />}
-          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/products/:id" element={<PrivateRoute />} />
         </Routes>
       </Container>
     </div>
