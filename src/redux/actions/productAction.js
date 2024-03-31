@@ -1,3 +1,5 @@
+import { productActions } from "../reducers/productReducer";
+
 function getProducts(searchQuery) {
   return async (dispatch, getState) => {
     // let url = `http://localhost:5000/products`;
@@ -5,7 +7,8 @@ function getProducts(searchQuery) {
     let response = await fetch(url);
     let data = await response.json();
     // console.log("ddd", data);
-    dispatch({ type: "GET_PRODUCT_SUCCESS", payload: { data } });
+    // dispatch({ type: "GET_PRODUCT_SUCCESS", payload: { data } });
+    dispatch(productActions.getAllProducts({ data }));
   };
 }
 
@@ -16,7 +19,8 @@ function getProductDetail(id) {
     let response = await fetch(url);
     let data = await response.json();
     // console.log("ddddd", data);
-    dispatch({ type: "DETAIL_PRODUCT_SUCCESS", payload: { data } });
+    // dispatch({ type: "DETAIL_PRODUCT_SUCCESS", payload: { data } });
+    dispatch(productActions.getDetailProduct({ data }));
   };
 }
 
