@@ -3,7 +3,7 @@
 // import rootReducer from "./reducers/index";
 // import { composeWithDevTools } from "@redux-devtools/extension";
 
-import productReducer from "./reducers/productReducer";
+import productReducer from "./reducers/productSlice";
 import authenticateReducer from "./reducers/authenticateReducer";
 
 import { configureStore } from "@reduxjs/toolkit";
